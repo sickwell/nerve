@@ -1,2 +1,2 @@
 
-known_weak = ['root', 'guest', 'test@123', 'test', 'test123456', '123456', 'password', 'admin', 'administrator']
+known_weak = ['root', 'toor', 'guest', 'cisco', 'test', 'test123456', '123456', 'querty', 'admin', 'administrator', 'qazwsx123']
