@@ -96,7 +96,7 @@ def status():
     if progress: 
       status = 'Scanning... [QUEUE:{}]'.format(progress)
     else:
-      status = 'Busy...'
+      status = 'Vzlom jopi...'
 
   return dict(status=status)
 
