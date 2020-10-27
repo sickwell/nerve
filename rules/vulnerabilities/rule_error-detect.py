@@ -8,7 +8,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'VLN_AB1D'
-    self.rule_severity = 2
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for Information Revealing Errors'
     self.rule_confirm = 'Application is Leaking Information'
     self.rule_details = ''
