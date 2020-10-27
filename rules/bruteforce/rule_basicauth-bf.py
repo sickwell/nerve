@@ -18,7 +18,7 @@ class Rule:
     self.rule_mitigation = '''Basic Authentication is configured on the remote server with weak credentials.
 Change to a stronger password or alternatively use a Single Sign On solution.'''
     self.rule_doc_roots = COMMON_LOGIN_PATHS
-    self.intensity = 1
+    self.intensity = 3
 
   def check_rule(self, ip, port, values, conf):
     t = Triage()
