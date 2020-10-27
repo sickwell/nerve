@@ -6,7 +6,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'VLN_4SD5'
-    self.rule_severity = 2
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for possible Host Header Injections'
     self.rule_confirm = 'Identified Host Header Injection'
     self.rule_details = ''
