@@ -11,6 +11,7 @@ https://github.com/PaytmLabs/nerve
 * Integration for web scans with nuclei
 * Disable non-used modules for internal scan (s3 buckets, domain takeovers & etc)
 * Scalling feature for Network Topology
+* Scan separation / network separation to prevent trash in topology
 
 # Additional problems at Ubuntu server:
 * sudo ufw allow 8080/tcp
