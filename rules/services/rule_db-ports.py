@@ -5,7 +5,7 @@ from db.db_ports  import database_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_0C15'
-    self.rule_severity = 3
+    self.rule_severity = 0
     self.rule_description = 'This rule checks for open Database Ports'
     self.rule_confirm = 'Remote Server Exposes Database Port(s)'
     self.rule_details = ''
