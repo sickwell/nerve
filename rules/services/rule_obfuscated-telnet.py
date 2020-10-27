@@ -4,7 +4,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'SVC_2993'
-    self.rule_severity = 1
+    self.rule_severity = 0
     self.rule_description = 'This rule checks for Telnet services on obfuscated ports'
     self.rule_mitigation = '''Telnet Running on non-standard ports is easy for attackers to find.
 While it doesn't do harm changing the standard port from (default) 23, check whether Telnet can be disabled, or allow acces only from trusted IP addresses.
