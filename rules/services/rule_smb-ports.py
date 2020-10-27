@@ -5,7 +5,7 @@ from db.db_ports import smb_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_Z115'
-    self.rule_severity = 3
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for open SMB Ports'
     self.rule_confirm = 'Remote Server Exposes SMB Port(s)'
     self.rule_details = ''
