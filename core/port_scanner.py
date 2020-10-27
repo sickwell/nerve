@@ -15,8 +15,8 @@ class Scanner():
   def __init__(self):
     self.nmap = nmap.PortScanner()
     self.nmap_args = {
-      'unpriv_scan':'-PS --min-rate 5000 --max-retries 1 --open --host-timeout 1m',
-      'priv_scan':'-PS --min-rate 5000 --max-retries 1 --open --host-timeout 1m'
+#      'unpriv_scan':'-PS --min-rate 5000 --max-retries 1 --open --host-timeout 1m',
+      'priv_scan':'-n -PR -PO -PS -PA -PP -PM -PE --min-rate 5000 --max-retries 1 --open --host-timeout 1m -O'
     }
     self.utils = Utils()
     
