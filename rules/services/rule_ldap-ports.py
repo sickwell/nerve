@@ -5,7 +5,7 @@ from db.db_ports import ldap_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_222E'
-    self.rule_severity = 3
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for open LDAP Ports'
     self.rule_confirm = 'Remote Server Exposes LDAP Port(s)'
     self.rule_details = ''
