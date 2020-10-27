@@ -5,7 +5,7 @@ from db.db_ports import vpn_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_ZII2'
-    self.rule_severity = 2
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for open VPN Ports'
     self.rule_confirm = 'Exposed VPN Port'
     self.rule_details = ''
