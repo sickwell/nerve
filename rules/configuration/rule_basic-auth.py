@@ -6,7 +6,7 @@ from db.db_paths  import COMMON_LOGIN_PATHS
 class Rule:
   def __init__(self):
     self.rule = 'CFG_D2A9'
-    self.rule_severity = 2
+    self.rule_severity = 1
     self.rule_description = 'This rule checks if a Web Server has Basic Authentication enabled'
     self.rule_confirm = 'Basic Authentication is Configured'
     self.rule_details = ''
