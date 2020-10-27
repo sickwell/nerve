@@ -13,6 +13,7 @@ https://github.com/PaytmLabs/nerve
 ## Test3
 * Unpriv scan disabled, Priv_scan improved (maximum detect and fast), -O disabled since generating a falses:
       'priv_scan':'-n -PO --min-rate 5000 --max-retries 1 --open --host-timeout 1m'
+
 could be also used: -PR -PO -PS -PA -PP -PM -PE
       
 * Now working with severity issue
