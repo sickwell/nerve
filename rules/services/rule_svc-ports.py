@@ -5,7 +5,7 @@ from db.db_ports import svc_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_F88A'
-    self.rule_severity = 3
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for open Service Ports'
     self.rule_confirm = 'Exposed Service Port'
     self.rule_details = ''
