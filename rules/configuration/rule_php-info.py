@@ -5,7 +5,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'CFG_BS3R'
-    self.rule_severity = 2
+    self.rule_severity = 0
     self.rule_description = 'This rule checks for misconfigurations in PHP'
     self.rule_confirm = 'PHP Information Leakage'
     self.rule_details = ''
