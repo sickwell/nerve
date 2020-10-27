@@ -1,6 +1,3 @@
-# Network Exploitation, Reconnaissance & Vulnerability Engine (N.E.R.V.E)
-![Nerve](https://github.com/PaytmLabs/nerve/blob/master/static/screenshots/2.png?raw=true)
-
 # Initial project, forked from:
 https://github.com/PaytmLabs/nerve
 
@@ -13,6 +10,7 @@ https://github.com/PaytmLabs/nerve
 # To Do:
 * Integration for web scans with nuclei
 * Disable non-used modules for internal scan (s3 buckets, domain takeovers & etc)
+* Scalling feature for Network Topology
 
 # Additional problems at Ubuntu server:
 * sudo ufw allow 8080/tcp
