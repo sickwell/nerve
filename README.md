@@ -19,9 +19,10 @@ https://github.com/PaytmLabs/nerve
 
 ## To Do:
 * Integration for web scans with nuclei
-* implement detection module in rules for easy-exploitable ports
+* Implement detection module in rules for easy-exploitable ports
 * Disable non-used modules for internal scan (s3 buckets, domain takeovers & etc)
 * Scalling feature for Network Topology
+* Implement button to disable host in Network topology
 * Scan separation / network separation to prevent trash in topology
 
 ## Additional problems at Ubuntu server:
