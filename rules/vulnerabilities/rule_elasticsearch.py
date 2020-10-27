@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'VLN_77D7'
-    self.rule_severity = 2
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for Open Elasticsearch instances'
     self.rule_confirm = 'Identified an open Elasticsearch'
     self.rule_details = ''
