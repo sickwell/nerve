@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'DSC_OR39'
-    self.rule_severity = 1
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for the exposure of GitLab Panels'
     self.rule_confirm = 'Identified a GitLab Panel'
     self.rule_details = ''
