@@ -5,7 +5,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'CFG_ZEGE'
-    self.rule_severity = 2
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for accessible Open API (Swagger) Documentation'
     self.rule_confirm = 'Remote Server is exposing Swagger API'
     self.rule_details = ''
