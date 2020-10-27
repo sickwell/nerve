@@ -7,7 +7,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'CFG_ESTR'
-    self.rule_severity = 4
+    self.rule_severity = 2
     self.rule_description = 'Thisr ule checks for NodeJS Server.js file exposures'
     self.rule_confirm = 'Remote NodeJS Server is leaking server.js'
     self.rule_details = ''
