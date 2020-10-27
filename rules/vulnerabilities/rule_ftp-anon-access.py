@@ -8,7 +8,7 @@ from db.db_ports import ftp_ports
 class Rule:
   def __init__(self):
     self.rule = 'VLN_242C'
-    self.rule_severity = 4
+    self.rule_severity = 3
     self.rule_description = 'This rule checks if FTP Server allows Anonymous Access'
     self.rule_details = ''
     self.rule_confirm = 'FTP Anonymous Access Allowed'
