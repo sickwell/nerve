@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'DSC_11A9'
-    self.rule_severity = 1
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for the exposure of JMX Consoles'
     self.rule_confirm = 'Identified a JMX Console'
     self.rule_details = ''
