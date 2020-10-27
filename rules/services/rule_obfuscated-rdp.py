@@ -4,7 +4,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'SVC_2125'
-    self.rule_severity = 1
+    self.rule_severity = 0
     self.rule_description = 'This rule checks for Remote Desktop (RDP) services on obfuscated ports'
     self.rule_mitigation = '''Remote Desktop Running on non-standard ports is easy for attackers to find.
 While it doesn't do harm changing the standard port from (default) 3389, check whether Remote Desktop (RDP) can be disabled, or allow acces only from trusted IP addresses.
