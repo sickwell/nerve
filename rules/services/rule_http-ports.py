@@ -7,7 +7,7 @@ from db.db_ports   import http_ports, https_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_ZGZA'
-    self.rule_severity = 1
+    self.rule_severity = 2
     self.rule_description = 'This rule checks for open HTTP Ports'
     self.rule_confirm = 'Remote Server Exposes HTTP Port(s)'
     self.rule_details = ''
