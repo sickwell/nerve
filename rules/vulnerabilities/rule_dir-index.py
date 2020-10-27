@@ -6,7 +6,7 @@ from db.db_paths  import COMMON_WEB_PATHS
 class Rule:
   def __init__(self):
     self.rule = 'VLN_Z013'
-    self.rule_severity = 4
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for Open Directories via Directory Indexing'
     self.rule_confirm = 'Remote Server has Directory Indexing Enabled'
     self.rule_details = ''
