@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'DSC_55A9'
-    self.rule_severity = 4
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for the exposure of Docker Registry Endpoints'
     self.rule_confirm = 'Identified a Docker Registry Endpoint'
     self.rule_details = ''
