@@ -25,6 +25,8 @@ could be also used: -PR -PO -PS -PA -PP -PM -PE
 * Scalling feature for Network Topology
 * Implement button to disable host in Network topology
 * Scan separation / network separation to prevent trash in topology
+* Setup python webhook
 
 ## Additional problems at Ubuntu server:
 * sudo ufw allow 8080/tcp
+* install discord_webhook https://pypi.org/project/Discord-Webhooks/#files
