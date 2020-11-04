@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'DSC_38A9'
-    self.rule_severity = 1
+    self.rule_severity = 2
     self.rule_description = 'This rule checks for the exposure of Flask Consoles'
     self.rule_confirm = 'Identified a Flask Console'
     self.rule_details = ''
