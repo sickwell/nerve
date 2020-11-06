@@ -30,3 +30,8 @@ could be also used: -PR -PO -PS -PA -PP -PM -PE
 ## Additional problems at Ubuntu server:
 * sudo ufw allow 8080/tcp
 * install discord_webhook https://pypi.org/project/Discord-Webhooks/#files
+
+## String to choose only findings with high severity to report it using webhook
+```node6@ubserver:/tmp$ cat myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_desc':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2"```
+'ip': '10.10.10.152'  'port': 21  'rule_sev': 3  'rule_desc': 'This rule checks if FTP Server allows Anonymous Access'
+
