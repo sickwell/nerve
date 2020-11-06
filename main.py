@@ -1,5 +1,7 @@
 import config
 import os
+import discord_webhook
+
 
 from core.redis   import rds
 from core.workers import start_workers
@@ -28,6 +30,7 @@ from views.view_scan       import scan
 from views.view_vulns      import vulns
 from views.view_alert      import alert
 from views.view_startover  import startover
+from discord_webhook import DiscordWebhook
 
 
 # Import REST API Endpoints
