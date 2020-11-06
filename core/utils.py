@@ -178,13 +178,13 @@ class Integration:
 #    
 #    return
   def submit_webhook(self, webhook, cfg, data={}):
-    logger.info('Sending the webhook...')
+    logger.info('Sending the webhook and writing to tmp file...')
     try:
       #obj = json.load(data) # load json data
       #obj = obj['ip', 'port', 'rule_sev', 'rule_details'] # choose only required paths to webhook
       #write file to OS
       f = open("/tmp/myfile.txt", "w") #create file      
-      f.write(data) # write to file
+      f.write(str(data)) # write to file
       f.close() #close
 #done
       sample_string = json.dumps(data) #discord limit to put only 2000 symbols
