@@ -9,11 +9,13 @@ import validators
 import psutil
 import hashlib
 import ipaddress
+import discord_webhook
 
 from core.logging import logger
 from config import WEB_LOG, USER_AGENT
 from urllib.parse import urlparse
 from version import VERSION
+from discord_webhook import DiscordWebhook
 
 class Utils:
   def generate_uuid(self):
@@ -161,21 +163,45 @@ class Integration:
     
     return
   
+#  def submit_webhook(self, webhook, cfg, data={}):
+#    logger.info('Sending the webhook...')
+#    try:
+#      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
+#      requests.post(webhook, 
+#                    json=data, 
+#                    headers={'User-Agent':USER_AGENT, 
+#                            'Content-Type':'application/json'},
+#                    verify=False)
+#      return True
+#    except Exception as e:
+#      logger.error('Could not submit webhook: {}'.format(e))
+#    
+#    return
   def submit_webhook(self, webhook, cfg, data={}):
     logger.info('Sending the webhook...')
     try:
-      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
-      requests.post(webhook, 
-                    json=data, 
-                    headers={'User-Agent':USER_AGENT, 
-                            'Content-Type':'application/json'},
-                    verify=False)
+      #obj = json.load(data) # load json data
+      #obj = obj['ip', 'port', 'rule_sev', 'rule_details'] # choose only required paths to webhook
+      #write file to OS
+      f = open("/tmp/myfile.txt", "w") #create file      
+      f.write(data) # write to file
+      f.close() #close
+#done
+      sample_string = json.dumps(data) #discord limit to put only 2000 symbols
+      webhook2 = DiscordWebhook(url=webhook, content=sample_string[0:1998])
+      response = webhook2.execute()
       return True
+#      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
+#      requests.post(webhook, 
+#                    json=data, 
+#                    headers={'User-Agent':USER_AGENT, 
+#                            'Content-Type':'application/json'},
+#                    verify=False)
+#      return True
     except Exception as e:
       logger.error('Could not submit webhook: {}'.format(e))
     
     return
-
 class Charts:
   def make_doughnut(self, data):
     vuln_count = {0:0, 1:0, 2:0, 3:0, 4:0}
