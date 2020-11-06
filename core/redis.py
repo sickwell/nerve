@@ -3,9 +3,11 @@ import sys
 import redis
 import threading
 import pickle
+import discord_webhook
 
 from core.logging import logger
 from core.utils   import Utils
+from discord_webhook import DiscordWebhook
 
 class RedisManager:
   def __init__(self):
