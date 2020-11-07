@@ -50,7 +50,7 @@ admin_ports = {
                 161:'SNMP',
               }
 
-svc_ports  = {2379:'etcd', 2380:'etcd', 2375:'Docker', 15672:'RabbitMQ', 5060:'SIP', 5601:'Kibana', 5672:'RabbitMQ', 3299:'SAP Router', 111:'NFS', 10443:'Fortinet', 1883:'MQTT'}
+svc_ports  = {2379:'etcd', 23:'Telnet', 2380:'etcd', 2375:'Docker', 15672:'RabbitMQ', 5060:'SIP', 5601:'Kibana', 5672:'RabbitMQ', 3299:'SAP Router', 111:'NFS', 10443:'Fortinet', 1883:'MQTT'}
 
 ftp_ports  = {20:'FTP', 21:'FTP'}
 
@@ -102,12 +102,16 @@ exploitable_ports = {
                   5672:'RabbitMQ',
                   15672:'RabbitMQ',
                   10000:'Webmin',
-                  3200:'SAP-Gateway',
+                  3299:'SAP',
                   50000:'SAP-Java',
                   88:'Kerberos',
                   513:'Rlogin',
                   2049:'NFS_share',
                   3316:'OpenMRS',
+                  2375:'Docker',
+                  10250:'Kubernetis'
+                  5060:'SIP',
+                  5601:'Kibana',
                 }
 
 ldap_ports = {389:'LDAP',636:'LDAPS'}
