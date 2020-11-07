@@ -63,8 +63,6 @@ exploitable_ports = {
                   1099:'Java RMI', 
                   4444:'Java RMI', 
                   11099:'Java RMI',
-                  47001:'Java RMI', 
-                  47002:'Java RMI',
                   10999:'Java RMI',  
                   7000:'WebLogic', 
                   7001:'WebLogic', 
