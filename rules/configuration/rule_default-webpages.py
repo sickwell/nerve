@@ -5,7 +5,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'CFG_E9AF'
-    self.rule_severity = 0
+    self.rule_severity = 1
     self.rule_description = 'This rule checks if a Default Page is Served by a Web Server'
     self.rule_confirm = 'Unmaintained Webserver'
     self.rule_details = ''
