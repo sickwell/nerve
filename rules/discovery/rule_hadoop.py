@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'DSC_3561'
-    self.rule_severity = 1
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for the exposure of Hadoop Resource Manager Panels'
     self.rule_confirm = 'Identified a Hadoop RM Panel'
     self.rule_details = ''
