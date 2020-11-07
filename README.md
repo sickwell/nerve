@@ -37,3 +37,39 @@ could be also used: -PR -PO -PS -PA -PP -PM -PE
 Result:
 'ip': '10.10.10.152'  'port': 21  'rule_sev': 3  'rule_desc': 'This rule checks if FTP Server allows Anonymous Access'
 
+```
+created binary and upgraded utils.py code
+node6@ubserver:/opt/nerve$ cat /tmp/hooker 
+cat /tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 1"
+node6@ubserver:/opt/nerve$ 
+```
+
+```
+def submit_webhook(self, webhook, cfg, data={}):
+    logger.info('Sending the webhook and writing to tmp file...')
+    try:
+      #obj = json.load(data) # load json data
+      #obj = obj['ip', 'port', 'rule_sev', 'rule_details'] # choose only required paths to webhook
+      #write file to OS
+      f = open("/tmp/myfile.txt", "w") #create file      
+      f.write(str(data)) # write to file
+      f.close() #close
+      #below block with code to execute binary hooker with cmd cat myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_desc':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2"
+      stream = os.popen('bash /tmp/hooker')
+      output = stream.read()
+      #done
+      #sample_string = json.dumps(data) #discord limit to put only 2000 symbols
+      webhook2 = DiscordWebhook(url=webhook, content=output[0:1998])
+      response = webhook2.execute()
+      return True
+#      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
+#      requests.post(webhook, 
+#                    json=data, 
+#                    headers={'User-Agent':USER_AGENT, 
+#                            'Content-Type':'application/json'},
+#                    verify=False)
+#      return True
+    except Exception as e:
+      logger.error('Could not submit webhook: {}'.format(e))
+```
+
