@@ -11,7 +11,7 @@ from db.db_paths import COMMON_WEB_PATHS
 class Rule:
   def __init__(self):
     self.rule = 'VLN_AS91'
-    self.rule_severity = 1
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for forgotten .DS_Store files'
     self.rule_confirm = '.DS_Store File Found'
     self.rule_details = ''
