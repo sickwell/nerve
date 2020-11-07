@@ -4,7 +4,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'SVC_0391'
-    self.rule_severity = 1
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for VNC services on obfuscated ports'
     self.rule_mitigation = '''VNC Running on non-standard ports is easy for attackers to find.
 While it doesn't do harm changing the standard port from (default) 5900-5904, check whether VNC can be disabled, or allow acces only from trusted IP addresses.
