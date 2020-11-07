@@ -5,7 +5,7 @@ from db.db_ports  import ftp_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_C74A'
-    self.rule_severity = 0
+    self.rule_severity = 1
     self.rule_description = 'This rule checks for open FTP Ports'
     self.rule_confirm = 'Remote Server Exposes FTP Port(s)'
     self.rule_details = ''
