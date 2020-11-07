@@ -56,6 +56,8 @@ ftp_ports  = {20:'FTP', 21:'FTP'}
 
 smb_ports  = {445:'SMB'}
 
+exploitable_ports  = {11211:'Memcache'}
+
 ldap_ports = {389:'LDAP',636:'LDAPS'}
 
 bgp_ports = {179:'BGP'}
