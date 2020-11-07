@@ -77,7 +77,7 @@ exploitable_ports = {
                   9000:'WebLogic',
                   9001:'WebLogic',
                   9002:'WebLogic',
-                  9003:'WebLogic'
+                  9003:'WebLogic',
                   9503:'WebLogic',
                   7070:'WebLogic',
                   7071:'WebLogic',
