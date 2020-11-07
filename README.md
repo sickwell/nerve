@@ -73,3 +73,8 @@ def submit_webhook(self, webhook, cfg, data={}):
       logger.error('Could not submit webhook: {}'.format(e))
 ```
 
+```
+node6@ubserver:/opt$ cat /tmp/hooker
+cat /tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2"
+node6@ubserver:/opt$ 
+```
