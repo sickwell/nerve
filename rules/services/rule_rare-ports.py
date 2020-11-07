@@ -7,7 +7,7 @@ class Rule:
     self.rule = 'SVC_0C1Z'
     self.rule_severity = 1
     self.rule_description = 'Some additional ports exposed'
-    self.rule_confirm = 'Remote Server Exposes unknown for scanner ports'
+    self.rule_confirm = 'Found unknown or not interesting port'
     self.rule_details = ''
     self.rule_mitigation = '''Bind all possible network services to localhost, and configure only those which require remote clients on an external interface.'''
     self.intensity = 0
