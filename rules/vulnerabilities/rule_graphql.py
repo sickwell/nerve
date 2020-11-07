@@ -5,7 +5,7 @@ from core.parser  import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'VLN_FBQP'
-    self.rule_severity = 2
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for open GraphQL Interfaces'
     self.rule_confirm = 'Exposed GraphQL Interface'
     self.rule_details = ''
