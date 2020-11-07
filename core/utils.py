@@ -10,6 +10,7 @@ import psutil
 import hashlib
 import ipaddress
 import discord_webhook
+import subprocess
 
 from core.logging import logger
 from config import WEB_LOG, USER_AGENT
@@ -186,9 +187,12 @@ class Integration:
       f = open("/tmp/myfile.txt", "w") #create file      
       f.write(str(data)) # write to file
       f.close() #close
-#done
-      sample_string = json.dumps(data) #discord limit to put only 2000 symbols
-      webhook2 = DiscordWebhook(url=webhook, content=sample_string[0:1998])
+      #below block with code to execute binary hooker with cmd cat myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_desc':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2"
+      stream = os.popen('bash /tmp/hooker')
+      output = stream.read()
+      #done
+      #sample_string = json.dumps(data) #discord limit to put only 2000 symbols
+      webhook2 = DiscordWebhook(url=webhook, content=output[0:1998])
       response = webhook2.execute()
       return True
 #      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
