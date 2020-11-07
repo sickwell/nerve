@@ -56,7 +56,7 @@ ftp_ports  = {20:'FTP', 21:'FTP'}
 
 smb_ports  = {445:'SMB'}
 
-dexploitable_ports = {  
+exploitable_ports = {  
                   11211:'Memcached', 
                   1090:'Java RMI', 
                   1098:'Java RMI',
