@@ -5,9 +5,9 @@ from db.db_ports     import known_ports
 class Rule:
   def __init__(self):
     self.rule = 'SVC_0C1Z'
-    self.rule_severity = 2
-    self.rule_description = 'This rule checks for open Rare Ports'
-    self.rule_confirm = 'Remote Server Exposes Rare Port(s)'
+    self.rule_severity = 1
+    self.rule_description = 'Some additional ports exposed'
+    self.rule_confirm = 'Remote Server Exposes unknown for scanner ports'
     self.rule_details = ''
     self.rule_mitigation = '''Bind all possible network services to localhost, and configure only those which require remote clients on an external interface.'''
     self.intensity = 0
