@@ -4,7 +4,7 @@ from core.parser import ScanParser
 class Rule:
   def __init__(self):
     self.rule = 'SVC_21BV'
-    self.rule_severity = 0
+    self.rule_severity = 3
     self.rule_description = 'This rule checks for SSH services on obfuscated ports'
     self.rule_mitigation = '''SSH Running on non-standard ports is easy for attackers to find.
 While it doesn't do harm changing the standard port from (default) 22, ensure the server only accepts keys, and only allows SSH access from trusted IP sources.
