@@ -78,3 +78,7 @@ node6@ubserver:/opt$ cat /tmp/hooker
 cat /tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2"
 node6@ubserver:/opt$ 
 ```
+## Upgrade for /tmp/hooker
+```
+node6@ubserver:/opt$ cat /tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%3{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2" | tr -d "'" | tr -s " " | sed 's/rule_sev: //g' | sed 's/rule_details/details/g'
+```
