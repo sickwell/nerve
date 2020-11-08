@@ -110,7 +110,6 @@ exploitable_ports = {
                   3316:'OpenMRS',
                   2375:'Docker',
                   10250:'Kubernetis',
-                  5060:'SIP',
                   5601:'Kibana',
                 }
 
