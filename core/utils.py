@@ -114,7 +114,8 @@ class Network:
     return ip
 
   def is_network_in_denylist(self, network):
-    hosts_limit = 65535
+#    hosts_limit = 65535
+    hosts_limit = 100000000000000
     deny_list = ['127.0.0.1', '127.0.0.1/32', '127.0.']
     
     for deny in deny_list:
