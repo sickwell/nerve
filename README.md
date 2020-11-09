@@ -82,3 +82,7 @@ node6@ubserver:/opt$
 ```
 node6@ubserver:/opt$ cat /tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%3{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2" | tr -d "'" | tr -s " " | sed 's/rule_sev: //g' | sed 's/rule_details/details/g'
 ```
+## ipmaker for nerve integration
+```
+cat /home/node6/scanner/myfile.txt | grepip | httprobe -c 50 -p http:88 -p http:8080 -p http:8443 -p http:8888 -p http:8181 -p http:8282 -p http:8089 -p http:4443 -p http:4343 -p -p https:8080 -p https:8443 -p https:8888 -p https:8181 -p https:8282 -p https:8383 -p https:8989 -p https:4443 -p http:4343 > /home/node6/scanner/fornuclei.txt
+```
