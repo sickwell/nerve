@@ -189,17 +189,25 @@ class Integration:
       f.write(str(data)) # write to file
       f.close() #close
       #below block with code to execute binary hooker with cmd cat /home/node6/scanner/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%3{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2" | tr -d "'" | tr -s " " | sed 's/rule_sev: //g' | sed 's/rule_details/details/g'
-      stream = os.popen('bash //home/node6/scanner/hooker')
-      getlines1 = stream.readlines()[0:25]
+      stream = os.popen('bash /home/node6/scanner/hooker')
+      getlines1 = stream.readlines()[0:20]
       output1 = "".join(getlines1)
       stream.close()
       stream = os.popen('bash /home/node6/scanner/hooker')
-      getlines2 = stream.readlines()[26:51]
+      getlines2 = stream.readlines()[21:41]
       output2 = "".join(getlines2)
       stream.close()
       stream = os.popen('bash /home/node6/scanner/hooker')
-      getlines3 = stream.readlines()[52:75]
+      getlines3 = stream.readlines()[42:62]
       output3 = "".join(getlines3)
+      stream.close()
+      stream = os.popen('bash /home/node6/scanner/hooker')
+      getlines4 = stream.readlines()[63:84]
+      output4 = "".join(getlines4)
+      stream.close()
+      stream = os.popen('bash /home/node6/scanner/hooker')
+      getlines5 = stream.readlines()[85:105]
+      output5 = "".join(getlines5)
       stream.close()
       #done
       #sample_string = json.dumps(data) #discord limit to put only 2000 symbols
@@ -209,20 +217,49 @@ class Integration:
       response = webhook2.execute()
       webhook2 = DiscordWebhook(url=webhook, content=output3[0:1998])
       response = webhook2.execute()
-"""
-this is an implementation of nuclei scanner for nerve.
-
-      os.popen('bash /home/node6/scanner/ipmaker') # бинарь 1 - он сделает cat /home/node6/scanner/myfile.txt | grepip | httprobe -c 50 -p http:88 -p http:8080 -p http:8443 -p http:8888 -p http:8181 -p http:8282 -p http:8089 -p http:4443 -p http:4343 -p -p https:8080 -p https:8443 -p https:8888 -p https:8181 -p https:8282 -p https:8383 -p https:8989 -p https:4443 -p http:4343 > /tmp/fornuclei.txt    
-# плюс к этому сделает файл чтобы нуклей его запустил        
-      time.sleep(300)
-      os.popen('bash /home/node6/scanner/nucleizer') # бинарь 2 с нуклеем,
-      time.sleep(600)
-      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
-      outnuclei = reader.read()
+      webhook2 = DiscordWebhook(url=webhook, content=output4[0:1998])
+      response = webhook2.execute()
+      webhook2 = DiscordWebhook(url=webhook, content=output5[0:1998])
+      response = webhook2.execute()
+#this is an implementation of nuclei scanner for nerve.
+      logger.info('Starting ipmaker with httprobe to define nuclei targets ~ 3 min...')
+      process = subprocess.Popen("/home/node6/scanner/ipmaker") # бинарь 1        
+      process.wait()
+      logger.info('Starting nucleizer for nuclei scan ~ 20 min...')
+      process2 = subprocess.Popen("/home/node6/scanner/nucleizer") # бинарь 2 
+      process2.wait()
+      logger.info('Report nuclei issues to discord...')
+      reader = open("/home/node6/scanner/nuclei-output.txt", "r") #read file to submit in discord
+      outnuclei1 = reader.readlines()[0:20]
+      output1 = "".join(outnuclei1)
       reader.close()
-      webhook-nuclei = DiscordWebhook(url=webhook, content=outnuclei[0:1998])
-      response = webhook-nuclei.execute()
-"""
+      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      outnuclei2 = reader.readlines()[21:41]
+      output2 = "".join(outnuclei2)
+      reader.close()
+      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      outnuclei3 = reader.readlines()[42:62]
+      output3 = "".join(outnuclei3)
+      reader.close()
+      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      outnuclei4 = reader.readlines()[63:84]
+      output4 = "".join(outnuclei4)
+      reader.close()
+      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      outnuclei5 = reader.readlines()[85:105]
+      output5 = "".join(outnuclei5)
+      reader.close()
+      webhooknuclei = DiscordWebhook(url=webhook, content=output1[0:1998])
+      response = webhooknuclei.execute()
+      webhooknuclei = DiscordWebhook(url=webhook, content=output2[0:1998])
+      response = webhooknuclei.execute()
+      webhooknuclei = DiscordWebhook(url=webhook, content=output3[0:1998])
+      response = webhooknuclei.execute()
+      webhooknuclei = DiscordWebhook(url=webhook, content=output4[0:1998])
+      response = webhooknuclei.execute()
+      webhooknuclei = DiscordWebhook(url=webhook, content=output5[0:1998])
+      response = webhooknuclei.execute()
+#commit rows above to disable nuclei scanner
       return True
 #      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
 #      requests.post(webhook, 
