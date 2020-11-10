@@ -11,6 +11,7 @@ import hashlib
 import ipaddress
 import discord_webhook
 import subprocess
+import time
 
 from core.logging import logger
 from config import WEB_LOG, USER_AGENT
@@ -114,8 +115,7 @@ class Network:
     return ip
 
   def is_network_in_denylist(self, network):
-#    hosts_limit = 65535
-    hosts_limit = 100000000000000
+    hosts_limit = 1000000000000000000000000000
     deny_list = ['127.0.0.1', '127.0.0.1/32', '127.0.']
     
     for deny in deny_list:
@@ -185,16 +185,44 @@ class Integration:
       #obj = json.load(data) # load json data
       #obj = obj['ip', 'port', 'rule_sev', 'rule_details'] # choose only required paths to webhook
       #write file to OS
-      f = open("/tmp/myfile.txt", "w") #create file      
+      f = open("/home/node6/scanner/myfile.txt", "w") #create file      
       f.write(str(data)) # write to file
       f.close() #close
-      #below block with code to execute binary hooker with cmd cat myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'port':" -e "'rule_sev':" -e "'rule_desc':" | awk 'NR%4{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2"
-      stream = os.popen('bash /tmp/hooker')
-      output = stream.read()
+      #below block with code to execute binary hooker with cmd cat /home/node6/scanner/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%3{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2" | tr -d "'" | tr -s " " | sed 's/rule_sev: //g' | sed 's/rule_details/details/g'
+      stream = os.popen('bash //home/node6/scanner/hooker')
+      getlines1 = stream.readlines()[0:25]
+      output1 = "".join(getlines1)
+      stream.close()
+      stream = os.popen('bash /home/node6/scanner/hooker')
+      getlines2 = stream.readlines()[26:51]
+      output2 = "".join(getlines2)
+      stream.close()
+      stream = os.popen('bash /home/node6/scanner/hooker')
+      getlines3 = stream.readlines()[52:75]
+      output3 = "".join(getlines3)
+      stream.close()
       #done
       #sample_string = json.dumps(data) #discord limit to put only 2000 symbols
-      webhook2 = DiscordWebhook(url=webhook, content=output[0:1998])
+      webhook2 = DiscordWebhook(url=webhook, content=output1[0:1998])
       response = webhook2.execute()
+      webhook2 = DiscordWebhook(url=webhook, content=output2[0:1998])
+      response = webhook2.execute()
+      webhook2 = DiscordWebhook(url=webhook, content=output3[0:1998])
+      response = webhook2.execute()
+"""
+this is an implementation of nuclei scanner for nerve.
+
+      os.popen('bash /home/node6/scanner/ipmaker') # бинарь 1 - он сделает cat /home/node6/scanner/myfile.txt | grepip | httprobe -c 50 -p http:88 -p http:8080 -p http:8443 -p http:8888 -p http:8181 -p http:8282 -p http:8089 -p http:4443 -p http:4343 -p -p https:8080 -p https:8443 -p https:8888 -p https:8181 -p https:8282 -p https:8383 -p https:8989 -p https:4443 -p http:4343 > /tmp/fornuclei.txt    
+# плюс к этому сделает файл чтобы нуклей его запустил        
+      time.sleep(300)
+      os.popen('bash /home/node6/scanner/nucleizer') # бинарь 2 с нуклеем,
+      time.sleep(600)
+      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      outnuclei = reader.read()
+      reader.close()
+      webhook-nuclei = DiscordWebhook(url=webhook, content=outnuclei[0:1998])
+      response = webhook-nuclei.execute()
+"""
       return True
 #      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
 #      requests.post(webhook, 
