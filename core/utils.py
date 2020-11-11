@@ -249,7 +249,6 @@ class Integration:
       outnuclei5 = reader.readlines()[85:105]
       output5 = "".join(outnuclei5)
       reader.close()
-      time.sleep(300)
       webhooknuclei = DiscordWebhook(url=webhook, content=output1[0:1998])
       response = webhooknuclei.execute()
       webhooknuclei = DiscordWebhook(url=webhook, content=output2[0:1998])
@@ -260,6 +259,8 @@ class Integration:
       response = webhooknuclei.execute()
       webhooknuclei = DiscordWebhook(url=webhook, content=output5[0:1998])
       response = webhooknuclei.execute()
+      logger.info('Sleeping 5 mins to avoid angry admins...')
+      time.sleep(300)
 #commit rows above to disable nuclei scanner
       return True
 #      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}
