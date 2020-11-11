@@ -249,6 +249,7 @@ class Integration:
       outnuclei5 = reader.readlines()[85:105]
       output5 = "".join(outnuclei5)
       reader.close()
+      time.sleep(300)
       webhooknuclei = DiscordWebhook(url=webhook, content=output1[0:1998])
       response = webhooknuclei.execute()
       webhooknuclei = DiscordWebhook(url=webhook, content=output2[0:1998])
