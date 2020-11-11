@@ -111,6 +111,8 @@ exploitable_ports = {
                   2375:'Docker',
                   10250:'Kubernetis',
                   5601:'Kibana',
+                  8082:'H2database',
+                  8082:'probably Seafile',
                 }
 
 ldap_ports = {389:'LDAP',636:'LDAPS'}
