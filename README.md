@@ -86,3 +86,6 @@ node6@ubserver:/opt$ cat /tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "
 ```
 cat /home/node6/scanner/myfile.txt | grepip | httprobe -c 50 -p http:88 -p http:8080 -p http:8443 -p http:8888 -p http:8181 -p http:8282 -p http:8089 -p http:4443 -p http:4343 -p -p https:8080 -p https:8443 -p https:8888 -p https:8181 -p https:8282 -p https:8383 -p https:8989 -p https:4443 -p http:4343 > /home/node6/scanner/fornuclei.txt
 ```
+
+## redis on non-standard port
+```redis-server --port 6380```
