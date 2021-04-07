@@ -19,13 +19,13 @@ could be also used: -PR -PO -PS -PA -PP -PM -PE
 * Now working with severity issue
 
 ## To Do:
-* Integration for web scans with nuclei
+* ~~Integration for web scans with nuclei
 * Implement detection module in rules for easy-exploitable ports
-* Disable non-used modules for internal scan (s3 buckets, domain takeovers & etc)
+* ~~Disable non-used modules for internal scan (s3 buckets, domain takeovers & etc)
 * Scalling feature for Network Topology
 * Implement button to disable host in Network topology
 * Scan separation / network separation to prevent trash in topology
-* Setup python webhook
+* ~~Setup webhook with discord
 
 ## Additional problems at Ubuntu server:
 * sudo ufw allow 8080/tcp
