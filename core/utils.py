@@ -185,27 +185,27 @@ class Integration:
       #obj = json.load(data) # load json data
       #obj = obj['ip', 'port', 'rule_sev', 'rule_details'] # choose only required paths to webhook
       #write file to OS
-      f = open("/home/node6/scanner/myfile.txt", "w") #create file      
+      f = open("/opt/nerve/tmp/myfile.txt", "w") #create file      
       f.write(str(data)) # write to file
       f.close() #close
-      #below block with code to execute binary hooker with cmd cat /home/node6/scanner/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%3{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2" | tr -d "'" | tr -s " " | sed 's/rule_sev: //g' | sed 's/rule_details/details/g'
-      stream = os.popen('bash /home/node6/scanner/hooker')
+      #below block with code to execute binary hooker with cmd cat /opt/nerve/tmp/myfile.txt | tr ',' '\n' | tr '{' '\n' | grep -e "'ip':" -e "'rule_sev':" -e "'rule_details':" | awk 'NR%3{printf "%s ",$0;next;}1' | grep -vi "'rule_sev': 0" | grep -vi "'rule_sev': 1" | grep -vi "'rule_sev': 2" | tr -d "'" | tr -s " " | sed 's/rule_sev: //g' | sed 's/rule_details/details/g'
+      stream = os.popen('bash /opt/nerve/tmp/hooker')
       getlines1 = stream.readlines()[0:20]
       output1 = "".join(getlines1)
       stream.close()
-      stream = os.popen('bash /home/node6/scanner/hooker')
+      stream = os.popen('bash /opt/nerve/tmp/hooker')
       getlines2 = stream.readlines()[21:41]
       output2 = "".join(getlines2)
       stream.close()
-      stream = os.popen('bash /home/node6/scanner/hooker')
+      stream = os.popen('bash /opt/nerve/tmp/hooker')
       getlines3 = stream.readlines()[42:62]
       output3 = "".join(getlines3)
       stream.close()
-      stream = os.popen('bash /home/node6/scanner/hooker')
+      stream = os.popen('bash /opt/nerve/tmp/hooker')
       getlines4 = stream.readlines()[63:84]
       output4 = "".join(getlines4)
       stream.close()
-      stream = os.popen('bash /home/node6/scanner/hooker')
+      stream = os.popen('bash /opt/nerve/tmp/hooker')
       getlines5 = stream.readlines()[85:105]
       output5 = "".join(getlines5)
       stream.close()
@@ -223,29 +223,29 @@ class Integration:
       response = webhook2.execute()
 #this is an implementation of nuclei scanner for nerve.
       logger.info('Starting ipmaker with httprobe to define nuclei targets ~ 3 min...')
-      process = subprocess.Popen("/home/node6/scanner/ipmaker") # бинарь 1        
+      process = subprocess.Popen("/opt/nerve/tmp/ipmaker") # бинарь 1        
       process.wait()
       logger.info('Starting nucleizer for nuclei scan ~ 20 min...')
-      process2 = subprocess.Popen("/home/node6/scanner/nucleizer") # бинарь 2 
+      process2 = subprocess.Popen("/opt/nerve/tmp/nucleizer") # бинарь 2 
       process2.wait()
       logger.info('Report nuclei issues to discord...')
-      reader = open("/home/node6/scanner/nuclei-output.txt", "r") #read file to submit in discord
+      reader = open("/opt/nerve/tmp/nuclei-output.txt", "r") #read file to submit in discord
       outnuclei1 = reader.readlines()[0:20]
       output1 = "".join(outnuclei1)
       reader.close()
-      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      reader = open("/opt/nerve/tmp/nuclei-output.txt", "r")
       outnuclei2 = reader.readlines()[21:41]
       output2 = "".join(outnuclei2)
       reader.close()
-      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      reader = open("/opt/nerve/tmp/nuclei-output.txt", "r")
       outnuclei3 = reader.readlines()[42:62]
       output3 = "".join(outnuclei3)
       reader.close()
-      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      reader = open("/opt/nerve/tmp/nuclei-output.txt", "r")
       outnuclei4 = reader.readlines()[63:84]
       output4 = "".join(outnuclei4)
       reader.close()
-      reader = open("/home/node6/scanner/nuclei-output.txt", "r")
+      reader = open("/opt/nerve/tmp/nuclei-output.txt", "r")
       outnuclei5 = reader.readlines()[85:105]
       output5 = "".join(outnuclei5)
       reader.close()
@@ -293,3 +293,4 @@ class Charts:
           ports[v['port']] += 1
           
     return ports
+
