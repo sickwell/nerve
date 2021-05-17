@@ -5,10 +5,10 @@ LOG_LEVEL = 'INFO'
 
 # Webserver Configuration
 WEB_HOST = '0.0.0.0'
-WEB_PORT = 8888
+WEB_PORT = 8001
 WEB_DEBUG = False
 WEB_USER = os.environ.get('username', 'admin')
-WEB_PASSW = '5mOrD7UpigMr'
+WEB_PASSW = '625375'
 WEB_LOG = 'nerve.log'
 
 # Web Security
@@ -29,7 +29,7 @@ MAX_LOGIN_ATTEMPTS = 5
 # Redis Configuration
 # This should not be set to anything else except localhost unless you want to do a multi-node deployment.
 RDS_HOST = '127.0.0.1'
-RDS_PORT = 6379
+RDS_PORT = 7001
 RDS_PASSW = None
 
 # Scan Configuration
