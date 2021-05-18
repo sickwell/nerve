@@ -9,7 +9,7 @@ WEB_PORT = 8001
 WEB_DEBUG = False
 WEB_USER = os.environ.get('username', 'admin')
 WEB_PASSW = 'usoeLxJQCN70'
-WEB_LOG = 'nerve.log'
+WEB_LOG = 'nerve1.log'
 
 # Web Security
 # Setting this to True will return all responses with security headers.

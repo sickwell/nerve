@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/local/bin/ -c 25 -l /opt/nuclei/tmp/fornuclei.txt -t /opt/nuclei-templates/ -retries 0 -timeout 4 -o /opt/nuclei/tmp/nuclei-output.txt -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko)" -silent
+/usr/local/bin/nuclei -c 25 -l /opt/nerve/tmp/fornuclei.txt -t /opt/nuclei-templates/ -retries 0 -timeout 4 -o /opt/nerve/tmp/nuclei-output.txt -H "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/605.1.15 (KHTML, like Gecko)" -silent
