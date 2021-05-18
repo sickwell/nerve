@@ -8,7 +8,7 @@ WEB_HOST = '0.0.0.0'
 WEB_PORT = 8001
 WEB_DEBUG = False
 WEB_USER = os.environ.get('username', 'admin')
-WEB_PASSW = '625375'
+WEB_PASSW = 'usoeLxJQCN70'
 WEB_LOG = 'nerve.log'
 
 # Web Security
