@@ -260,7 +260,7 @@ class Integration:
       webhooknuclei = DiscordWebhook(url=webhook, content=output5[0:1998])
       response = webhooknuclei.execute()
       logger.info('Sleeping 5 mins to avoid angry admins...')
-      time.sleep(300)
+      time.sleep(1800)
 #commit rows above to disable nuclei scanner
       return True
 #      data = {'status':'done', 'vulnerabilities':data, 'scan_config':cfg}

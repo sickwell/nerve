@@ -1,2 +1,2 @@
 #!/bin/bash
-cat /opt/nerve/tmp/myfile.txt | grepip | /usr/local/bin/httprobe -c 50 -p http:8080 -p http:8443 -p http:8888 -p http:8181 -p http:8282 -p http:8089 -p http:4443 -p http:4343 -p -p https:8080 -p https:8443 -p https:8888 -p https:8181 -p https:8282 -p https:8383 -p https:8989 -p https:4443 -p http:4343 > /opt/nerve/tmp/fornuclei.txt
+cat /opt/nerve/tmp/myfile.txt | grepip | /usr/local/bin/httpx -ports 80,900,3000,3131,5000,8060,8082,8209,8888,9094,10001,10050,12873,18183,18184,18187,18191,18192,18208,18264,31338,3306,443,8443 -silent -o /opt/nerve/tmp/fornuclei.txt
